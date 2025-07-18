@@ -1,0 +1,25 @@
+{
+  "name": "namaste_react",
+  "version": "1.0.0",
+  "scripts": {
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/vishalpatida0102/Namaste_React.git"
+  },
+  "author": "vishal patidar",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/vishalpatida0102/Namaste_React/issues"
+  },
+  "homepage": "https://github.com/vishalpatida0102/Namaste_React#readme",
+  "description": "",
+  "devDependencies": {
+    "parcel": "^2.15.4"
+  },
+  "dependencies": {
+    "react": "^19.1.0",
+    "react-dom": "^19.1.0"
+  }
+}

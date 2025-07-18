@@ -72,13 +72,16 @@
         </div>
 </div> */}
 
+import React from 'react'
+import ReactDOM from 'react-dom/client'
 
 
-const parent1=React.createElement('div',{id:"second"},
-       [ React.createElement('h1',{id:"heading"},"hello"),React.createElement('h1',{id:"heading1"},"hii")]
+const parent1=React.createElement('div',{id:"second1"},
+       [ React.createElement('h1',{id:"heading1"},"helloddddd"),React.createElement('h1',{id:"heading1"},"hii")]
 )
 
         const root=ReactDOM.createRoot(document.getElementById("root"))
+
 
         // root.render(parent1);
 

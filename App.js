@@ -72,28 +72,60 @@
         </div>
 </div> */}
 
-import React from 'react'
-import ReactDOM from 'react-dom/client'
+// import React from 'react'
+// import ReactDOM from 'react-dom/client'
 
 
-const parent1=React.createElement('div',{id:"second1"},
-       [ React.createElement('h1',{id:"heading1"},"helloddddd"),React.createElement('h1',{id:"heading1"},"hii")]
-)
+// const parent1=React.createElement('div',{id:"second1"},
+//        [ React.createElement('h1',{id:"heading1"},"helloddddd"),React.createElement('h1',{id:"heading1"},"hii")]
+// )
 
-        const root=ReactDOM.createRoot(document.getElementById("root"))
-
-
-        // root.render(parent1);
+//         const root=ReactDOM.createRoot(document.getElementById("root"))
 
 
-const parent2=React.createElement('div',{id:"second"},
-       [ React.createElement('h1',{id:"heading"},"hello2"),React.createElement('h1',{id:"heading1"},"hii2")]
-)
+//         // root.render(parent1);
 
-        // const root=ReactDOM.createRoot(document.getElementById("root"))
+
+// const parent2=React.createElement('div',{id:"second"},
+//        [ React.createElement('h1',{id:"heading"},"hello2"),React.createElement('h1',{id:"heading1"},"hii2")]
+// )
+
+//         // const root=ReactDOM.createRoot(document.getElementById("root"))
         
 
-        // root.render(parent1); // In this Senario first parent1 render than parent2 replace it only parent2 show
-        // root.render(parent2);
+//         // root.render(parent1); // In this Senario first parent1 render than parent2 replace it only parent2 show
+//         // root.render(parent2);
 
-        root.render([parent1,parent2]); // in this both show
+//         root.render([parent1,parent2]); // in this both show
+
+
+
+
+// Episode-03
+
+
+import React from "react";
+import reactdom from 'react-dom/client'
+
+
+// const heading=React.createElement(
+//         "h1",
+//         {id:"heading"},
+//         "Namste react "
+
+// );
+
+// console.log(heading);
+
+
+// JSX
+
+// const jsxHeading = <h1 id="heading">Namste React by using JSX</h1> // in one line
+
+const jsxHeading = (<h1 id="heading">
+        Namste React by using JSX
+        </h1>) // if multiple line is use bracket
+
+const root= reactdom.createRoot(document.getElementById('root'));
+
+root.render(jsxHeading);

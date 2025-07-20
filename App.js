@@ -122,10 +122,62 @@ import reactdom from 'react-dom/client'
 
 // const jsxHeading = <h1 id="heading">Namste React by using JSX</h1> // in one line
 
-const jsxHeading = (<h1 id="heading">
-        Namste React by using JSX
-        </h1>) // if multiple line is use bracket
+// const jsxHeading = (<h1 id="heading">
+//         Namste React by using JSX
+//         </h1>) // if multiple line is use bracket
+
+
+
+
+
+//Rect Components-
+//class and function
+//functions are used in industry
+
+
+const Heading1=()=> <h1>hr hr mahadev</h1>  // second type written
+
+const Heading=()=>
+{
+        // react cpmponent composition
+        return (
+                <div>
+                <Heading1/>
+                <h1>Jay shree Nath</h1>
+                </div>
+        )
+}
+
+
+const title=(
+        <h1>hwllo</h1>
+)
+
+
+ const title2=(
+        <div>
+        <h1>hwllo</h1>
+        {title}
+        </div>
+        
+)
+
+const Show=()=>
+{
+        return(
+                <h1>hwllo</h1>
+        )
+}
+
+
+/*
+ye sb same hee
+{show()}
+<show/>
+<show><show/>
+*/
 
 const root= reactdom.createRoot(document.getElementById('root'));
 
-root.render(jsxHeading);
+root.render(<Show/>);
+// root.render({show()})

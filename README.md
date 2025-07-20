@@ -19,4 +19,12 @@ Episode-02
 
 
 Episode-03 
+
+      UnderStand the what is parcel, what it do,
+      what is babel ,what do,
+      create a coponent,
+      create a react element
+      understand the code, How to write
+
+
       

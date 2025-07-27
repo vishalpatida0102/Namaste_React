@@ -104,80 +104,112 @@
 // Episode-03
 
 
+// import React from "react";
+// import reactdom from 'react-dom/client'
+
+
+// // const heading=React.createElement(
+// //         "h1",
+// //         {id:"heading"},
+// //         "Namste react "
+
+// // );
+
+// // console.log(heading);
+
+
+// // JSX
+
+// // const jsxHeading = <h1 id="heading">Namste React by using JSX</h1> // in one line
+
+// // const jsxHeading = (<h1 id="heading">
+// //         Namste React by using JSX
+// //         </h1>) // if multiple line is use bracket
+
+
+
+
+
+// //Rect Components-
+// //class and function
+// //functions are used in industry
+
+
+// const Heading1=()=> <h1>hr hr mahadev</h1>  // second type written
+
+// const Heading=()=>
+// {
+//         // react cpmponent composition
+//         return (
+//                 <div>
+//                 <Heading1/>
+//                 <h1>Jay shree Nath</h1>
+//                 </div>
+//         )
+// }
+
+
+// const title=(
+//         <h1>hwllo</h1>
+// )
+
+
+//  const title2=(
+//         <div>
+//         <h1>hwllo</h1>
+//         {title}
+//         </div>
+        
+// )
+
+// const Show=()=>
+// {
+//         return(
+//                 <h1>hwllo</h1>
+//         )
+// }
+
+
+// /*
+// ye sb same hee
+// {show()}
+// <show/>
+// <show><show/>
+// */
+
+// const root= reactdom.createRoot(document.getElementById('root'));
+
+// root.render(<Show/>);
+// // root.render({show()})
+
+
+
+
+// Episode-04
+
 import React from "react";
 import reactdom from 'react-dom/client'
+// import logo from 'logo.png'
+import Hader from "./components/Hader";
+import Body from "./components/Body";
+import '../index.css'
 
+ 
 
-// const heading=React.createElement(
-//         "h1",
-//         {id:"heading"},
-//         "Namste react "
-
-// );
-
-// console.log(heading);
-
-
-// JSX
-
-// const jsxHeading = <h1 id="heading">Namste React by using JSX</h1> // in one line
-
-// const jsxHeading = (<h1 id="heading">
-//         Namste React by using JSX
-//         </h1>) // if multiple line is use bracket
+ 
 
 
 
-
-
-//Rect Components-
-//class and function
-//functions are used in industry
-
-
-const Heading1=()=> <h1>hr hr mahadev</h1>  // second type written
-
-const Heading=()=>
-{
-        // react cpmponent composition
-        return (
-                <div>
-                <Heading1/>
-                <h1>Jay shree Nath</h1>
-                </div>
-        )
-}
-
-
-const title=(
-        <h1>hwllo</h1>
-)
-
-
- const title2=(
-        <div>
-        <h1>hwllo</h1>
-        {title}
-        </div>
-        
-)
-
-const Show=()=>
-{
-        return(
-                <h1>hwllo</h1>
-        )
-}
-
-
-/*
-ye sb same hee
-{show()}
-<show/>
-<show><show/>
-*/
+  const HomePage=()=>
+        {
+                return(
+                        <>
+                        <Hader/>
+                        <Body/>
+                        </>
+                )
+        }
 
 const root= reactdom.createRoot(document.getElementById('root'));
 
-root.render(<Show/>);
-// root.render({show()})
+root.render(<HomePage/>) 

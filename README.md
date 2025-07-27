@@ -27,4 +27,19 @@ Episode-03
       understand the code, How to write
 
 
-      
+Episode-04
+       
+
+       Make Simple Food Oder Project
+       Make Components, OF Cards,
+       Understand the concept of Components,
+       Learn About PROPS,
+       Make Dynamic Changes in Components,
+       Use MAP function,
+       Use KEY concept in components
+
+
+Episode-05
+      Learn About Folder Structure
+
+

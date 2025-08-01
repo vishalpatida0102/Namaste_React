@@ -6,32 +6,41 @@ import restaurantData from '../utils/restroData'
 import '../../index.css'
 import Shimmer from './Shimmer'
 
+import { Link } from 'react-router-dom'
+
 const Body=()=>
 {
-        const [filtered,setFiltered]=useState(restaurantData);
-        const [filteredData,setFilteredData]=useState(restaurantData);
+        const [filtered,setFiltered]=useState([]);
+        const [filteredData,setFilteredData]=useState( []);
         const [searchText,setSearchText]=useState('');
 
-        // const fetchdata=async ()=>
-        // {
-        //       const data= await fetch(
-        //         "https://www.swiggy.com/mapi/menu/pl?page-type=REGULAR_MENU&complete-menu=true&lat=22.7442802&lng=75.8751487&restaurantId=419942&submitAction=ENTER"
 
-        //       );
+        console.log('check behavior of rendering')
 
-        //       const json= await data.json()
-        //       console.log(json);
+        const fetchdata=async ()=>
+        {
+              const data= await fetch(
+                "https://www.swiggy.com/dapi/restaurants/list/v5?lat=22.7442802&lng=75.8751487&is-seo-homepage-enabled=true&page_type=DESKTOP_WEB_LISTING"
+                // "https://www.swiggy.com/mapi/menu/pl?page-type=REGULAR_MENU&complete-menu=true&lat=22.7442802&lng=75.8751487&restaurantId=419942&submitAction=ENTER"
+      //  " https://www.swiggy.com/mapi/restaurants/list/v5?offset=0&is-seo-homepage-enabled=true&lat=22.7442802&lng=75.8751487&carousel=true&third_party_vendor=1"
 
-        //       setFiltered(json.data.cards[4].card.card.gridElements.infoWithStyle.restaurants);
-        //       console.log(json.data);
-        // }
+              );
 
-        // useEffect(()=>
-        // {
-        //   fetchdata();
-        //   console.log("data is fetched");
+              const json= await data.json()
+              console.log(json);
+
+
+              setFiltered(json.data.cards[4].card.card.gridElements.infoWithStyle.restaurants);
+              setFilteredData(json.data.cards[4].card.card.gridElements.infoWithStyle.restaurants);
+              console.log(json.data);
+        }
+
+        useEffect(()=>
+        {
+          fetchdata();
+          console.log("data is fetched");
          
-        // },[]);
+        },[]);
 
 
         // console.log(restaurantData);
@@ -51,7 +60,7 @@ const Body=()=>
                                     }}
                                   />
 
-                                <button onClick={()=>
+                                <button className='search-btn' onClick={()=>
                                   {
                                     const searchData= filtered.filter((res)=>{
                                       return res.info.name.toLowerCase().includes(searchText.toLowerCase());
@@ -67,19 +76,19 @@ const Body=()=>
 
                                 <div className='filter-btn'>
  
-                            <button
-  className='btn'
-  onClick={() => {
-    let filteredData = filtered.filter(
-        (car) => car.info.avgRating >4);
-    console.log('hii', filteredData);
-    setFiltered(filteredData);
-    setFilteredData(filteredData);
+                            <button className='btn' onClick={() =>
+                             {
+                                  let filteredData = filtered.filter(
+                                     (car) => car.info.avgRating >4);
     
-  }}
+                                    setFiltered(filteredData);
+                                    setFilteredData(filteredData);
+    
+                          }}
 >
-  Top Rated Restro
-</button>
+                            Top Rated Restro
+                          </button>
+
                         </div>
 
                                 
@@ -102,8 +111,9 @@ const Body=()=>
 
 
                             {
-                              filteredData.map((res,index)=>(
-                                <Card key={index} resData={res}/>
+                              filteredData.map((res)=>(
+                                <Link key={res.info.id} 
+                                to={"/restaurants/" + res.info.id}> <Card   resData={res}/> </Link>
                               ))
                             }
                         </div>

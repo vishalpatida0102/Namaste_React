@@ -4,7 +4,10 @@ const LOGO_LINK="https://images-platform.99static.com/v84irzbNBd5aawXGKXfH4SEjcn
 
 
 export const baseUrl = "https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_660/";
+
+export const ITEM_LINK="https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,h_600/"
  
+export const MANU_LINK="https://www.swiggy.com/dapi/menu/pl?page-type=REGULAR_MENU&complete-menu=true&lat=22.7442802&lng=75.8751487&restaurantId="
 
 
 export default LOGO_LINK;

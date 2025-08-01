@@ -1,12 +1,14 @@
 import React, { useState } from 'react'
 import LOGO_LINK from '../utils/links'
 import '../../index.css'
+import {Link } from 'react-router-dom'
 
 
 const Hader=()=>
 {
 
         const [loginbtn,setLoginbtn]=useState("Login")
+        console.log("check behavior of rendering by login button")
         return(
                 <div className="header">
                         <div className="logo-container">
@@ -16,10 +18,10 @@ const Hader=()=>
 
                        <div className="nav-bar">
                         <ul className='nav'>
-                                <li>Home</li>
-                                <li>About</li>
-                                <li>contact</li> 
-                                <li>Cart</li>
+                                <li><Link to="/">Home</Link></li>
+                                <li><Link to="/about">About Us </Link></li>
+                                <li><Link to="/contact">contact Us </Link></li> 
+                                <li><Link to="/">Cart </Link></li>
 
                         </ul>
                         </div>

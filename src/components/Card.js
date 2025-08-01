@@ -1,10 +1,12 @@
 import React from 'react'
  import '../../index.css'
 import { baseUrl } from '../utils/links'
+import { useNavigate } from 'react-router-dom'
 
 const Card=({resData})=>{
 
         // const {resData}=props;
+        const navigate=useNavigate();
         const {
                 name,cloudinaryImageId,avgRating,cuisines,costForTwo
         }=resData.info;
@@ -13,16 +15,16 @@ const Card=({resData})=>{
 // console.log(cloudinaryImageId); // Should print a string, not undefined or an object
 // console.log(baseUrl + cloudinaryImageId); // Try pasting this URL in your browser
  
-console.log(costForTwo)
+// console.log(costForTwo)
         
 
         return(
                 <div className='container'>
               <div className="card">
-      <img src={baseUrl + cloudinaryImageId}  /> 
+      <img  src={baseUrl + cloudinaryImageId}  /> 
 
-      <div className="card-content">
-        <div className="restro-name">{name}</div>
+      <div  className="card-content">
+        <div  className="restro-name">{name}</div>
         <div className="cusine">{cuisines.join(", ")}</div>
         <div className="rating">⭐ {avgRating}</div>
         <div className="cost">{costForTwo}</div>

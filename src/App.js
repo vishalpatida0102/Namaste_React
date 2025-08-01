@@ -187,12 +187,18 @@
 
 // Episode-04
 
-import React from "react";
-import reactdom from 'react-dom/client'
+import React, { Children } from "react";
+import Reactdom from 'react-dom/client'
 // import logo from 'logo.png'
 import Hader from "./components/Hader";
 import Body from "./components/Body";
 import '../index.css'
+import { createBrowserRouter, Outlet, RouterProvider }from "react-router-dom";
+import About from "./components/About"; 
+import Contact from "./components/Contact";
+import Error from "./components/Error";
+import Restaurant from "./components/Restaurant";
+
 
  
 
@@ -205,11 +211,39 @@ import '../index.css'
                 return(
                         <>
                         <Hader/>
-                        <Body/>
-                        </>
+                        <Outlet/>
+                         </>
                 )
         }
 
-const root= reactdom.createRoot(document.getElementById('root'));
 
-root.render(<HomePage/>) 
+  const appRouter = createBrowserRouter([
+  { 
+    path: "/",
+    element: <HomePage />,
+    errorElement: <Error />,
+    children: [ // 👈 Correct lowercase and inside the same object
+      {
+        path: "/",
+        element: <Body />,
+      },
+      {
+        path: "/about",
+        element: <About />,
+      },
+      {
+        path: "/contact",
+        element: <Contact />,
+      },
+      {
+        path:"/restaurants/:resId",
+        element:<Restaurant/>
+      },
+    ],
+  },
+]);
+
+
+const root= Reactdom.createRoot(document.getElementById('root'));
+
+root.render(<RouterProvider router={appRouter}/> ) 

@@ -9,5 +9,8 @@ export const ITEM_LINK="https://media-assets.swiggy.com/swiggy/image/upload/fl_l
  
 export const MANU_LINK="https://www.swiggy.com/dapi/menu/pl?page-type=REGULAR_MENU&complete-menu=true&lat=22.7442802&lng=75.8751487&restaurantId="
 
+export const ABOUT_MEMBER_LINK="https://api.github.com/users/";
+
+export const ID_ARRAY=["vishalpatida0102","RoshanGorakhpuriya"];
 
 export default LOGO_LINK;

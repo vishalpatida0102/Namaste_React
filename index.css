@@ -255,3 +255,29 @@
   padding: 40px 20px;
   /* background-color: hsl(0, 0%, 98%); */
 }
+
+.user-card{
+ 
+  width: 300px;
+  background-color: #f9f9f9;
+  border-radius: 10px;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+  padding: 20px;
+  margin: 20px;
+}
+.user-card-container{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;  
+  
+  
+}
+
+.img-github{
+  
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  margin-bottom: 10px;
+}

@@ -198,6 +198,7 @@ import About from "./components/About";
 import Contact from "./components/Contact";
 import Error from "./components/Error";
 import Restaurant from "./components/Restaurant";
+import UserClass from "./components/UserClass";
 
 
  
@@ -229,7 +230,7 @@ import Restaurant from "./components/Restaurant";
       },
       {
         path: "/about",
-        element: <About />,
+        element: <About />, 
       },
       {
         path: "/contact",

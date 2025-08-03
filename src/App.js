@@ -187,7 +187,7 @@
 
 // Episode-04
 
-import React, { Children } from "react";
+import React, { Children, Suspense } from "react";
 import Reactdom from 'react-dom/client'
 // import logo from 'logo.png'
 import Hader from "./components/Hader";
@@ -199,11 +199,26 @@ import Contact from "./components/Contact";
 import Error from "./components/Error";
 import Restaurant from "./components/Restaurant";
 import UserClass from "./components/UserClass";
+import Shimmer from "./components/Shimmer";
+// import Grocery from "./components/Grocery"; // fir yese mat karo
 
 
  
 
  
+
+const Grocery= React.lazy(()=>import("./components/Grocery")); // Lazy loading the Grocery component
+
+// Lazy loading is used to load components only when they are needed, 
+// which can improve performance by reducing the initial load time of the application.
+// It is useful for components that are not immediately visible or necessary when the application first loads.
+// This is done using React's `React.lazy` function, which allows you to define a component that will be loaded dynamically.
+// The `Suspense` component is used to wrap the lazy-loaded component and provide a fallback UI (like a loading spinner) 
+// while the component is being loaded.
+// 1000 components he to site ko load hone me time lagega, to lazy loading se sirf wahi component load hoga jo user ko chahiye
+//  or baki component ko tab load karega jab user usko dekhega, isse performance improve hoti he
+//  or initial load time kam hota he
+//  or agar koi component load hone me time lagta he to Suspense se loading spinner show kar sakte he
 
 
 
@@ -235,6 +250,13 @@ import UserClass from "./components/UserClass";
       {
         path: "/contact",
         element: <Contact />,
+      },
+       {
+        path: "/grocery",
+        element: 
+              <Suspense fallback={<Shimmer/>}>
+                   <Grocery />
+              </Suspense>
       },
       {
         path:"/restaurants/:resId",

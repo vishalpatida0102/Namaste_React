@@ -2,11 +2,13 @@ import React, { useEffect, useState } from 'react'
 import Card from './Card'
 import restaurantData from '../utils/restroData'
 // import { useState } from 'react'
+import UseOnlineOffline from '../utils/UseOnlineOffline'
 
 import '../../index.css'
 import Shimmer from './Shimmer'
 
 import { Link } from 'react-router-dom'
+import UseOnlineOffline from '../utils/UseOnlineOffline'
 
 const Body=()=>
 {
@@ -48,7 +50,15 @@ const Body=()=>
         // console.log(restaurantData.info.clodinaryImageId);
 
 
+
+        
+        const internetStatus=UseOnlineOffline();
+        if(internetStatus===false) return <h1>Looks like you are offline, please check your internet connection</h1>;
+
         if(filtered.length===0) return <Shimmer/>; // Ensure data is available before accessing it
+
+
+        
         
         return(
                 <div className='body-container'>

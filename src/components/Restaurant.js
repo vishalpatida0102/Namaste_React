@@ -3,33 +3,23 @@ import { useEffect,useState } from 'react'
 import Shimmer from './Shimmer';
 import ItemCards from './ItemCards';
 import { useParams } from 'react-router-dom';
-import { MANU_LINK } from '../utils/links';
+import useRestaurantInfo from '../utils/RestaurantInfo';
 
 const Restaurant = () => {
 
+    
+
     const {resId}= useParams(); // jo name router me likha he vo hi use kare 
-    console.log("parma="+resId);
+     
 
-    const [resInfo,setResInfo]=useState(null);
-    useEffect(()=>{
-        fetchData();
-    },[]);
-
-
-    const fetchData=async ()=>
-    {
-        const data=await fetch( MANU_LINK + resId);
-
-        const json= await data.json(); //await lagana jaruri he
-        console.log(json);
-
-        setResInfo(json.data)
-
-    }
+    
+    const resInfo= useRestaurantInfo(resId); // Custom hook to fetch restaurant information
 
 // 67385
 //https://www.swiggy.com/dapi/menu/pl?page-type=REGULAR_MENU&complete-menu=true&lat=22.7442802&lng=75.8751487&restaurantId=67385&catalog_qa=undefined&submitAction=ENTER
 //https://www.swiggy.com/dapi/menu/pl?page-type=REGULAR_MENU&complete-menu=true&lat=22.7442802&lng=75.8751487&restaurantId=73884&catalog_qa=undefined&submitAction=ENTER
+  
+
     if(!resInfo) return <Shimmer/>; // Ensure data is available before accessing it
     const {name,cuisines, costForTwo, costForTwoMessage} = resInfo?.cards[2]?.card?.card?.info || {};
 
